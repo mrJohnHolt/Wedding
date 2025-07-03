@@ -1,122 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1,h2{font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-p {line-height: 2}
-.bgimg, .bgimg2 {
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-.bgimg {background-image: url("img/danielBex.jpeg")}
-.bgimg2 {background-image: url("/w3images/flowers.jpg")}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bex & Daniel - Wedding</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-
-<!-- Header / Home-->
-<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
-  <div class="w3-display-middle w3-text-white w3-center">
-    <h1 class="w3-jumbo">Jane & John</h1>
-    <h2>Are getting married</h2>
-    <h2><b>17.07.2017</b></h2>
-  </div>
-</header>
-
-<!-- Navbar (sticky bottom) -->
-<div class="w3-bottom w3-hide-small">
-  <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
-    <a href="#home" style="width:25%" class="w3-bar-item w3-button">Home</a>
-    <a href="#us" style="width:25%" class="w3-bar-item w3-button">Jane & John</a>
-    <a href="#wedding" style="width:25%" class="w3-bar-item w3-button">Wedding</a>
-    <a href="#rsvp" style="width:25%" class="w3-bar-item w3-button w3-hover-black">RSVP</a>
-  </div>
-</div>
-
-<!-- About / Jane And John -->
-<div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min" id="us">
-  <div class="w3-content">
-    <h1 class="w3-center w3-text-grey"><b>Jane & John</b></h1>
-    <img class="w3-round w3-grayscale-min" src="/w3images/wedding_couple2.jpg" style="width:100%;margin:32px 0">
-    <p><i>You all know us. And we all know you. We are getting married lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat.</i>
-    </p><br>
-    <p class="w3-center"><a href="#wedding" class="w3-button w3-black w3-round w3-padding-large w3-large">Wedding Details</a></p>
-  </div>
-</div>
-
-<!-- Background photo -->
-<div class="w3-display-container bgimg2">
-  <div class="w3-display-middle w3-text-white w3-center">
-    <h1 class="w3-jumbo">You Are Invited</h1><br>
-    <h2>Of course..</h2>
-  </div>
-</div>
-
-<!-- Wedding information -->
-<div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center" id="wedding">
-  <div class="w3-content">
-    <h1 class="w3-text-grey"><b>THE WEDDING</b></h1>
-    <img class="w3-round-large w3-grayscale-min" src="/w3images/wedding_location.jpg" style="width:100%;margin:64px 0">
-    <div class="w3-row">
-      <div class="w3-half">
-        <h2>When</h2>
-        <p>Wedding Ceremony - 2:00pm</p>
-        <p>Reception & Dinner - 5:00pm</p>
-      </div>
-      <div class="w3-half">
-        <h2>Where</h2>
-        <p>Some place, an address</p>
-        <p>Some where, some address</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- RSVP section -->
-<div class="w3-container w3-padding-64 w3-pale-red w3-center w3-wide" id="rsvp">
-  <h1>HOPE YOU CAN MAKE IT!</h1>
-  <p class="w3-large">Kindly Respond By January, 2017</p>
-  <p class="w3-xlarge">
-    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off" style="padding:8px 60px">RSVP</button>
-  </p>
-</div>
-
-<!-- RSVP modal -->
-<div id="id01" class="w3-modal">
-  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding:32px;max-width:600px">
-    <div class="w3-container w3-white w3-center">
-      <h1 class="w3-wide">CAN YOU COME?</h1>
-      <p>We really hope you can make it.</p>
-      <form>
-        <input class="w3-input w3-border" type="text" placeholder="Name(s)" name="name">
-      </form>
-      <p><i>Sincerely, John & Jane</i></p>
-      <div class="w3-row">
-        <div class="w3-half">
-          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-green">Going</button>
+    <!-- Header -->
+    <header style="background-image: url('img/BexDaniel01.jpeg');">
+        <div class="hero-content">
+            <h1>Bex & Daniel</h1>
+            <div class="date">August 22, 2026</div>
+            <div class="location">St Peter's Church, Stonyhurst</div>
         </div>
-        <div class="w3-half">
-          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-red">Can't come</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="scroll-indicator"></div>
+    </header>
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
-<div class="w3-hide-small" style="margin-bottom:32px"> </div>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#details">Wedding Details</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Our Story</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>We're so excited to celebrate our special day with all of our loved ones! Our journey together has been filled with laughter, adventure, and countless beautiful memories.</p>
+                    
+                    <p>We've chosen the stunning St Peter's Church at Stonyhurst for our ceremony, followed by a reception at the beautiful Hidden Oaks venue. The rustic charm and natural beauty of these locations perfectly reflect our love story.</p>
+                    
+                    <p>To ensure everyone can relax and enjoy the festivities, we kindly request that our wedding be an adults-only affair. We appreciate your understanding and can't wait to share this joyous occasion with you!</p>
+                    
+                    <p><strong>Please RSVP by August 31st, 2025</strong></p>
+                </div>
+                <div class="about-image">
+                    <div class="couple-photo" style="background-image: url('img/DSCF0997.jpeg');">
+                        Bex & Daniel
+                        <br>
+                        💕
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Details -->
+    <section id="details" class="section">
+        <div class="container">
+            <h2>Wedding Details</h2>
+            <div class="wedding-details">
+                <div class="detail-card">
+                    <div class="icon">⛪</div>
+                    <h3>Ceremony</h3>
+                    <p><strong>Time:</strong> 12:30 PM</p>
+                    <p><strong>Location:</strong> St Peter's Church, Stonyhurst</p>
+                    <p>BB7 9PZ</p>
+                </div>
+                <div class="detail-card">
+                    <div class="icon">🎉</div>
+                    <h3>Reception</h3>
+                    <p><strong>Location:</strong> Hidden Oaks</p>
+                    <p>Stoneygate Lane, Ribchester<br>PR3 3YN</p>
+                    <p>Following ceremony</p>
+                </div>
+                <div class="detail-card">
+                    <div class="icon">🌙</div>
+                    <h3>Evening Reception</h3>
+                    <p><strong>Time:</strong> 7:00 PM onwards</p>
+                    <p><strong>Location:</strong> Hidden Oaks</p>
+                    <p>Night guests welcome from 7pm</p>
+                </div>
+                <div class="detail-card">
+                    <div class="icon">🏨</div>
+                    <h3>Accommodations</h3>
+                    <p><strong>Ribble Valley Holiday Homes</strong><br>15% discount with code 'Brown-Shutt26'</p>
+                    <p><strong>Local Hotels:</strong><br>The Ribchester Arms<br>The White Bull</p>
+                    <p><strong>Camping:</strong> Dale Hey Caravan Park</p>
+                </div>
+                <div class="detail-card">
+                    <div class="icon">👔</div>
+                    <h3>Dress Code</h3>
+                    <p><strong>Suits / Formal Attire</strong></p>
+                    <p>We can't wait to see you all dressed up for our special day!</p>
+                </div>
+                <div class="detail-card">
+                    <div class="icon">🎁</div>
+                    <h3>Gifts</h3>
+                    <p>Your presence is all that we require!</p>
+                    <p>Should you wish to give a gift, funds for our honeymoon would be lovely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="section">
+        <div class="container">
+            <h2>RSVP</h2>
+            <div class="rsvp-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select number</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="attendance">Will you be attending?</label>
+                        <select id="attendance" name="attendance" required>
+                            <option value="">Please select</option>
+                            <option value="yes">Yes, I'll be there!</option>
+                            <option value="no">Sorry, can't make it</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dietary">Dietary Restrictions</label>
+                        <textarea id="dietary" name="dietary" rows="3" placeholder="Please let us know about any dietary restrictions or food allergies"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Special Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Share a special message or memory with us!"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send RSVP</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>We can't wait to celebrate with you!</p>
+            <p>Bex & Daniel • August 22, 2026</p>
+            <p>RSVP by August 31st, 2025</p>
+        </div>
+    </footer>
 
 </body>
 </html>
