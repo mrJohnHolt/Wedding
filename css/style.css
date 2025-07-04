@@ -8,7 +8,7 @@
 :root {
     --color-bg-gradient-start: #e8f4f8;
     --color-bg-gradient-end: #f0f8ff;
-    --color-primary: #2c3e50;
+    --color-primary: #ffffff;
     --color-secondary: #4a90a4;
     --color-accent: #87ceeb;
     --color-white: #fff;
@@ -19,11 +19,12 @@
     --color-nav-bg: rgba(176, 224, 230, 0.95);
     --color-nav-border: rgba(176, 224, 230, 0.3);
     --color-section-even: rgba(255, 255, 255, 0.5);
-    --color-btn-shadow: rgba(135, 206, 235, 0.4);
+    --color-btn-shadow: rgba(0, 0, 0, 0.4);
     --color-btn-hover: rgba(135, 206, 235, 0.18);
     --color-card-border: rgba(176, 224, 230, 0.3);
     --color-footer-bg: #2c3e50;
     --color-footer-text: #fff;
+    --header-text-shadow: 5px 4px 4px rgba(0,0,0,0.7);
 }
 
 body {
@@ -49,6 +50,7 @@ header {
     justify-content: center;
     text-align: center;
     color: var(--color-primary);
+    text-shadow: var(--header-text-shadow);
     position: relative;
     overflow: hidden;
 }
@@ -61,21 +63,26 @@ header {
 .hero-content h1 {
     font-size: 6rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: var(--header-text-shadow);
     font-weight: 300;
     letter-spacing: 3px;
+}
+
+.hero-content .date,
+.hero-content .location {
+    text-shadow: var(--header-text-shadow);
 }
 
 .hero-content .date {
     font-size: 3rem;
     margin-bottom: 2rem;
-    color: var(--color-black);
+    color: var(--color-primary);
     font-style: italic;
 }
 
 .hero-content .location {
     font-size: 1.3rem;
-    color: var(--color-black);
+    color: var(--color-primary);
     margin-bottom: 3rem;
 }
 
