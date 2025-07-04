@@ -4,11 +4,33 @@
     box-sizing: border-box;
 }
 
+/* CSS Variables for easy theming */
+:root {
+    --color-bg-gradient-start: #e8f4f8;
+    --color-bg-gradient-end: #f0f8ff;
+    --color-primary: #2c3e50;
+    --color-secondary: #4a90a4;
+    --color-accent: #87ceeb;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-grey: #5a5a5a;
+    --color-grey-light: #565656;
+    --color-card-bg: rgba(255, 255, 255, 0.8);
+    --color-nav-bg: rgba(176, 224, 230, 0.95);
+    --color-nav-border: rgba(176, 224, 230, 0.3);
+    --color-section-even: rgba(255, 255, 255, 0.5);
+    --color-btn-shadow: rgba(135, 206, 235, 0.4);
+    --color-btn-hover: rgba(135, 206, 235, 0.18);
+    --color-card-border: rgba(176, 224, 230, 0.3);
+    --color-footer-bg: #2c3e50;
+    --color-footer-text: #fff;
+}
+
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
-    color: #5a5a5a;
-    background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%);
+    color: var(--color-grey);
+    background: linear-gradient(135deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-end) 100%);
 }
 
 .container {
@@ -26,7 +48,7 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #2c3e50;
+    color: var(--color-primary);
     position: relative;
     overflow: hidden;
 }
@@ -47,13 +69,13 @@ header {
 .hero-content .date {
     font-size: 3rem;
     margin-bottom: 2rem;
-    color: #000000;
+    color: var(--color-black);
     font-style: italic;
 }
 
 .hero-content .location {
     font-size: 1.3rem;
-    color: #000000;
+    color: var(--color-black);
     margin-bottom: 3rem;
 }
 
@@ -68,19 +90,13 @@ header {
 .scroll-indicator::after {
     content: '↓';
     font-size: 2rem;
-    color: #000000;
+    color: var(--color-black);
 }
 
 /* Navigation */
 nav {
-    background: rgba(176, 224, 230, 0.95);
-    padding: 1rem 0;
-    
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(176, 224, 230, 0.3);
+    background: var(--color-nav-bg);
+    border-bottom: 1px solid var(--color-nav-border);
 }
 
 nav ul {
@@ -92,7 +108,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #2c3e50;
+    color: var(--color-primary);
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 25px;
@@ -101,7 +117,7 @@ nav a {
 }
 
 nav a:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--color-white, #fff);
     transform: translateY(-2px);
 }
 
@@ -112,14 +128,14 @@ nav a:hover {
 }
 
 .section:nth-child(even) {
-    background: rgba(255, 255, 255, 0.5);
+    background: var(--color-section-even);
 }
 
 .section h2 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 3rem;
-    color: #2c3e50;
+    color: var(--color-primary);
     position: relative;
 }
 
@@ -128,7 +144,7 @@ nav a:hover {
     display: block;
     width: 80px;
     height: 3px;
-    background: linear-gradient(to right, #87ceeb, #4a90a4);
+    background: linear-gradient(to right, var(--color-accent), var(--color-secondary));
     margin: 1rem auto;
     border-radius: 2px;
 }
@@ -144,7 +160,7 @@ nav a:hover {
 .about-text {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #565656;
+    color: var(--color-grey-light);
 }
 
 .about-image {
@@ -164,8 +180,8 @@ nav a:hover {
     margin: 0 auto;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     font-size: 2rem;
-    color: #225b72;
-    border: 3px solid #fff;
+    color: var(--color-secondary);
+    border: 3px solid var(--color-white);
     position: relative;
     overflow: hidden;
 }
@@ -190,13 +206,13 @@ nav a:hover {
 }
 
 .detail-card {
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--color-card-bg);
     padding: 2.5rem;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    border: 1px solid rgba(176, 224, 230, 0.3);
+    border: 1px solid var(--color-card-border);
 }
 
 .detail-card:hover {
@@ -206,25 +222,25 @@ nav a:hover {
 .detail-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #2c3e50;
+    color: var(--color-primary);
 }
 
 .detail-card p {
-    color: #5a5a5a;
+    color: var(--color-grey);
     line-height: 1.6;
 }
 
 .detail-card .icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #4a90a4;
+    color: var(--color-secondary);
 }
 
 /* RSVP Section */
 .rsvp-form {
     max-width: 600px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--color-card-bg);
     padding: 3rem;
     border-radius: 15px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
@@ -237,7 +253,7 @@ nav a:hover {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #2c3e50;
+    color: var(--color-primary);
     font-weight: 500;
 }
 
@@ -246,23 +262,23 @@ nav a:hover {
 .form-group textarea {
     width: 100%;
     padding: 0.8rem;
-    border: 2px solid #e8f4f8;
+    border: 2px solid var(--color-bg-gradient-start);
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--color-white);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #87ceeb;
+    border-color: var(--color-accent);
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #87ceeb, #4a90a4);
-    color: white;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    color: var(--color-white);
     padding: 1rem 3rem;
     border: none;
     border-radius: 25px;
@@ -271,23 +287,24 @@ nav a:hover {
     transition: all 0.3s ease;
     display: block;
     margin: 2rem auto 0;
+    box-shadow: 0 5px 15px var(--color-btn-shadow);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(135, 206, 235, 0.4);
+    box-shadow: 0 8px 32px var(--color-btn-hover);
 }
 
 /* Footer */
 footer {
-    background: #2c3e50;
-    color: white;
+    background: var(--color-footer-bg);
+    color: var(--color-footer-text);
     text-align: center;
     padding: 3rem 0;
     margin-top: 5rem;
 }
 
 footer p {
+    color: var(--color-footer-text);
     font-size: 1.1rem;
     margin-bottom: 1rem;
 }
