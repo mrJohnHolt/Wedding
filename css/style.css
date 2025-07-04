@@ -263,7 +263,7 @@ nav a:hover {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--color-primary);
+    color: var(--color-grey-light);
     font-weight: 500;
 }
 
