@@ -157,6 +157,15 @@ nav a:hover {
     border-radius: 2px;
 }
 
+/* Center Section Text */
+.center-section-text {
+  text-align: center;
+}
+.center-section-text h2,
+.center-section-text p {
+  margin-bottom: 1.2rem;
+}
+
 /* About Section */
 .about-grid {
     display: grid;
@@ -432,4 +441,18 @@ footer p {
         flex-direction: column;
         gap: 1rem;
     }
+}
+
+.center-section-bg {
+  background: var(--section-bg, #f9f9f9);
+}
+
+/* How to Get There Section */
+#how-to-get-there,
+#how-to-get-there h2,
+#how-to-get-there p,
+#how-to-get-there li,
+#how-to-get-there ul,
+#how-to-get-there .directions-text {
+  color: var(--color-grey-light);
 }
