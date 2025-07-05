@@ -26,7 +26,6 @@
             <li><a href="#rsvp">RSVP</a></li>
             <!-- <li><a href="photos.html">Gallery</a></li> -->
         </ul>
-    </nav>
 
     <!-- About Section -->
     <section id="church" class="section">
@@ -134,7 +133,7 @@
         </div>
     </section>
 
-    <!-- RSVP Section -->
+   <!-- RSVP Section -->
     <section id="rsvp" class="section">
         <div class="container">
             <h2>RSVP</h2>
@@ -173,6 +172,30 @@
                     <div class="form-group">
                         <label for="message">Special Message</label>
                         <textarea id="message" name="message" rows="4" placeholder="Share a special message or memory with us!"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="starter">Starter Choice</label>
+                        <select id="starter" name="starter" required>
+                            <option value="">Select starter</option>
+                            <option value="salt-pepper-chicken">Salt & Pepper Chicken Bites - House Sweet Chilli Asian Slaw</option>
+                            <option value="wild-mushrooms">Wild Mushrooms on Croute - Truffle & Parmesan (V)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="main">Main Course Choice</label>
+                        <select id="main" name="main" required>
+                            <option value="">Select main</option>
+                            <option value="goosnargh-chicken">Local Goosnargh Chicken - Dauphinoise Potatoes, Wild Mushroom & Tarragon Velouté</option>
+                            <option value="five-cheese-pie">Assiette's Five Cheese Pie - Homemade Baked Beans, Triple Cooked Hand Cut Chips (V)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dessert">Dessert Choice</label>
+                        <select id="dessert" name="dessert" required>
+                            <option value="">Select dessert</option>
+                            <option value="brownie">Chocolate Orange Brownie, Chantilly Cream - Candied Orange</option>
+                            <option value="crumble">Apple & Cinnamon Crumble, Creme Anglaise</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn-primary">Send RSVP</button>
                 </form>
