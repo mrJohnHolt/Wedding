@@ -39,7 +39,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
         `Message: ${message}`
     );
 
-    window.location.href = `mailto:mrjholt@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:shuttbrownsayido@gmail.com?subject=${subject}&body=${body}`;
 });
 
 // Add fade-in animation on scroll
