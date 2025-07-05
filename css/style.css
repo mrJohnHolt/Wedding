@@ -164,6 +164,7 @@ nav a:hover {
 .center-section-text h2,
 .center-section-text p {
   margin-bottom: 1.2rem;
+  
 }
 
 /* About Section */
@@ -341,6 +342,19 @@ nav a:hover {
 .btn-primary:hover {
     box-shadow: 0 8px 32px var(--color-btn-hover);
 }
+/* How to Get There Section */
+#how-to-get-there,
+#how-to-get-there h2,
+#how-to-get-there p,
+#how-to-get-there li,
+#how-to-get-there ul,
+#how-to-get-there .directions-text {
+  color: var(--color-grey-light);
+}
+/* margin between accommodation options */
+.margin-top {
+     margin-top: 5rem;
+}
 
 /* Map Section Styles */
 .map-section .how-to-grid {
@@ -348,6 +362,7 @@ nav a:hover {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: start;
+    
 }
 
 .map-section .map-embed iframe {
@@ -447,12 +462,3 @@ footer p {
   background: var(--section-bg, #f9f9f9);
 }
 
-/* How to Get There Section */
-#how-to-get-there,
-#how-to-get-there h2,
-#how-to-get-there p,
-#how-to-get-there li,
-#how-to-get-there ul,
-#how-to-get-there .directions-text {
-  color: var(--color-grey-light);
-}
