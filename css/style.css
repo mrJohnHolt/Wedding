@@ -180,7 +180,6 @@ nav a:hover {
     line-height: 1.8;
     color: var(--color-grey-light);
 }
-
 .about-image {
     text-align: center;
     position: relative;
@@ -490,4 +489,22 @@ footer p {
 .center-section-bg {
   background: var(--section-bg, #f9f9f9);
 }
+
+#how-we-met h3 {
+    text-align: center;
+    color: var(--color-grey-light);
+    font-size: 2.1rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+#how-we-met-heading {
+    text-align: center;
+    color: var(--color-grey-light);
+    font-size: 2.1rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+
 
