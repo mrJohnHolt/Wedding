@@ -378,6 +378,15 @@ nav a:hover {
 #how-to-get-there ul,
 #how-to-get-there .directions-text {
   color: var(--color-grey-light);
+  
+}
+#how-to-get-there .directions-text ul {
+  display: block !important;
+  flex-direction: initial !important;
+  gap: 0 !important;
+  list-style: disc inside !important;
+  padding-left: 1.5em !important;
+  margin: 0 0 1rem 0 !important;
 }
 /* margin between accommodation options */
 .margin-top {
@@ -390,6 +399,7 @@ nav a:hover {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: start;
+   
     
 }
 
