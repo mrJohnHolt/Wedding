@@ -28,6 +28,14 @@ document.querySelector('form').addEventListener('submit', function(e) {
     const attendance = document.getElementById('attendance').value;
     const dietary = document.getElementById('dietary').value.trim();
     const message = document.getElementById('message').value.trim();
+    const starter = document.getElementById('starter').value;
+    const main = document.getElementById('main').value;
+    const dessert = document.getElementById('dessert').value;
+
+    // Get readable menu text for each choice
+    const starterText = document.querySelector('#starter option:checked').textContent;
+    const mainText = document.querySelector('#main option:checked').textContent;
+    const dessertText = document.querySelector('#dessert option:checked').textContent;
 
     const subject = encodeURIComponent('RSVP for Bex & Daniel');
     const body = encodeURIComponent(
@@ -35,6 +43,9 @@ document.querySelector('form').addEventListener('submit', function(e) {
         `Email: ${email}\n` +
         `Number of Guests: ${guests}\n` +
         `Attendance: ${attendance}\n` +
+        `Starter: ${starterText}\n` +
+        `Main: ${mainText}\n` +
+        `Dessert: ${dessertText}\n` +
         `Dietary Restrictions: ${dietary}\n` +
         `Message: ${message}`
     );
