@@ -499,7 +499,9 @@ footer p {
 .center-section-bg {
   background: var(--section-bg, #f9f9f9);
 }
-
+#how-we-met {
+    display: none;
+}
 #how-we-met h3 {
     text-align: center;
     color: var(--color-grey-light);
