@@ -782,6 +782,10 @@ footer p {
     .hero-content h1 {
         font-size: 6rem;
     }
+
+    header {
+        background-position: 65% 25%;
+    }
 }
 
 .center-section-bg {
