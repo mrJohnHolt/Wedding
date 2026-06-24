@@ -780,6 +780,23 @@ footer p {
 }
 
 @media (min-width: 1024px) {
+    /* Desktop only: keep Gifts directly under Accommodation, same card size. */
+    .wedding-details {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "a b c"
+            "d e f"
+            ". g .";
+    }
+
+    .wedding-details > .detail-card:nth-child(1) { grid-area: a; }
+    .wedding-details > .detail-card:nth-child(2) { grid-area: b; }
+    .wedding-details > .detail-card:nth-child(3) { grid-area: c; }
+    .wedding-details > .detail-card:nth-child(4) { grid-area: d; }
+    .wedding-details > .detail-card:nth-child(5) { grid-area: e; }
+    .wedding-details > .detail-card:nth-child(6) { grid-area: f; }
+    .wedding-details > .detail-card:nth-child(7) { grid-area: g; }
+
     .hero-content h1 {
         font-size: 6rem;
     }
