@@ -1,0 +1,15 @@
+# Editor
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backup / dead files
+*Bak.html
+*.bakhtml
+upload.html
+/style.css
+
+# Screenshot verification output
+temporary screenshots/
