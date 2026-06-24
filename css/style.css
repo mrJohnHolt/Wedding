@@ -43,7 +43,8 @@ body {
 /* Header */
 header {
     background-image: url('../img/BexDaniel01.jpeg');
-    background-size:cover;
+    background-size: cover;
+    background-position: 65% center;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -84,6 +85,12 @@ header {
     font-size: 1.05rem;
     color: var(--color-primary);
     margin-bottom: 2rem;
+}
+
+@media (max-aspect-ratio: 3/4) {
+    header {
+        background-position: 50% center;
+    }
 }
 
 .scroll-indicator {
