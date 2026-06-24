@@ -1,5 +1,5 @@
 // Wedding day countdown — drives the tear-off pads in the hero
-const weddingDate = new Date('2026-08-22T00:00:00');
+const weddingDate = new Date('2026-08-22T12:30:00');
 const timeCards = document.querySelectorAll('.time-card');
 const timeUnits = document.querySelectorAll('.time-unit');
 const bigDaySign = document.getElementById('big-day-sign');
