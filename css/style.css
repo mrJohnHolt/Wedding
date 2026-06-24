@@ -216,7 +216,7 @@ header {
     }
 }
 
-/* Petal confetti — subtle drift off the countdown, thickening as the day nears */
+/* Confetti — petals, paper squares, bells and hearts drifting off the countdown, growing subtly as the day nears */
 .petal-field {
     position: absolute;
     top: 100%;
@@ -228,34 +228,107 @@ header {
     z-index: 1;
 }
 
-.petal {
+.confetti-particle {
     position: absolute;
     top: 0;
-    width: 6px;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.55);
-    border-radius: 50% 0 50% 50%;
-    box-shadow: 0 0 3px rgba(255, 255, 255, 0.35);
-    animation-name: petalFall;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    animation-name: confettiFall;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
 }
 
-@keyframes petalFall {
+.confetti-particle.petal {
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 50% 0 50% 50%;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.35);
+}
+
+.confetti-particle.square {
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 1px;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.confetti-particle.icon {
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes confettiFall {
     0% {
         transform: translate(0, 0) rotate(0deg);
         opacity: 0;
     }
     15% {
-        opacity: 0.55;
+        opacity: var(--peak-opacity, 0.55);
     }
     80% {
-        opacity: 0.35;
+        opacity: calc(var(--peak-opacity, 0.55) * 0.55);
     }
     100% {
         transform: translate(var(--drift, 30px), 220px) rotate(var(--rot, 180deg));
         opacity: 0;
     }
+}
+
+/* Vintage "Big Day" hanging sign — replaces the countdown once the wedding date arrives */
+.big-day-sign {
+    position: relative;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(139, 94, 60, 0.18), transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(139, 94, 60, 0.14), transparent 38%),
+        var(--paper);
+    color: var(--ink-deep);
+    padding: 1.5rem 2rem;
+    border-radius: 4px;
+    box-shadow:
+        0 14px 28px rgba(40, 20, 10, 0.45),
+        inset 0 0 0 1px rgba(139, 94, 60, 0.3);
+    transform: rotate(-1.5deg);
+    animation: signSwing 4s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+.big-day-sign::before,
+.big-day-sign::after {
+    content: '';
+    position: absolute;
+    top: -22px;
+    width: 2px;
+    height: 26px;
+    background: var(--leather);
+    opacity: 0.8;
+}
+
+.big-day-sign::before {
+    left: 22%;
+    transform: rotate(20deg);
+    transform-origin: bottom;
+}
+
+.big-day-sign::after {
+    right: 22%;
+    transform: rotate(-20deg);
+    transform-origin: bottom;
+}
+
+.sign-text {
+    display: block;
+    font-family: 'Georgia', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.45;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@keyframes signSwing {
+    0%, 100% { transform: rotate(-1.5deg); }
+    50% { transform: rotate(1.5deg); }
 }
 
 @media (max-aspect-ratio: 3/4) {

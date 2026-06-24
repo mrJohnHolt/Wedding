@@ -1,6 +1,8 @@
 // Wedding day countdown — drives the tear-off pads in the hero
 const weddingDate = new Date('2026-08-22T00:00:00');
 const timeCards = document.querySelectorAll('.time-card');
+const timeUnits = document.querySelectorAll('.time-unit');
+const bigDaySign = document.getElementById('big-day-sign');
 
 if (timeCards.length) {
     const lastValues = {};
@@ -31,9 +33,8 @@ if (timeCards.length) {
         const diff = weddingDate - now;
 
         if (diff <= 0) {
-            setUnit('days', '❤');
-            setUnit('hours', '❤');
-            setUnit('mins', '❤');
+            timeUnits.forEach(unit => unit.style.display = 'none');
+            if (bigDaySign) bigDaySign.hidden = false;
             clearInterval(intervalId);
             return;
         }
@@ -55,21 +56,40 @@ if (timeCards.length) {
     const intervalId = setInterval(tick, 5000);
 }
 
-// Petal confetti drifting off the countdown — sparse at first, gathering pace as the day nears
+// Confetti drifting off the countdown — petals, paper squares, bells and hearts.
+// Sparse and small at first, gathering pace and size as the day nears. Kept faint
+// so it never competes with the hero photo behind it.
 const petalField = document.getElementById('petal-field');
 
 if (petalField) {
     const msPerDay = 1000 * 60 * 60 * 24;
 
-    const spawnPetal = () => {
-        const petal = document.createElement('span');
-        petal.className = 'petal';
-        petal.style.left = `${Math.random() * 100}%`;
-        petal.style.setProperty('--drift', `${(Math.random() * 60 - 30).toFixed(0)}px`);
-        petal.style.setProperty('--rot', `${(Math.random() * 200 + 60).toFixed(0)}deg`);
-        petal.style.animationDuration = `${(4 + Math.random() * 3).toFixed(1)}s`;
-        petalField.appendChild(petal);
-        petal.addEventListener('animationend', () => petal.remove());
+    const spawnParticle = (scale) => {
+        const kind = ['petal', 'square', 'bell', 'heart'][Math.floor(Math.random() * 4)];
+        const particle = document.createElement(kind === 'bell' || kind === 'heart' ? 'i' : 'span');
+        particle.classList.add('confetti-particle');
+
+        if (kind === 'bell') {
+            particle.classList.add('icon', 'fa-solid', 'fa-bell');
+            particle.style.fontSize = `${(9 * scale).toFixed(1)}px`;
+        } else if (kind === 'heart') {
+            particle.classList.add('icon', 'fa-solid', 'fa-heart');
+            particle.style.fontSize = `${(9 * scale).toFixed(1)}px`;
+        } else {
+            particle.classList.add(kind);
+            const size = `${(6 * scale).toFixed(1)}px`;
+            particle.style.width = size;
+            particle.style.height = size;
+        }
+
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.setProperty('--drift', `${(Math.random() * 60 - 30).toFixed(0)}px`);
+        particle.style.setProperty('--rot', `${(Math.random() * 200 + 60).toFixed(0)}deg`);
+        particle.style.setProperty('--peak-opacity', Math.min(0.6, 0.4 + scale * 0.1).toFixed(2));
+        particle.style.animationDuration = `${(4 + Math.random() * 3).toFixed(1)}s`;
+
+        petalField.appendChild(particle);
+        particle.addEventListener('animationend', () => particle.remove());
     };
 
     const petalLoop = () => {
@@ -78,15 +98,16 @@ if (petalField) {
 
         let interval;
         let maxBurst;
-        if (daysLeft > 180) { interval = 9000; maxBurst = 1; }
-        else if (daysLeft > 90) { interval = 6000; maxBurst = 1; }
-        else if (daysLeft > 30) { interval = 4000; maxBurst = 1; }
-        else if (daysLeft > 14) { interval = 2600; maxBurst = 2; }
-        else if (daysLeft > 3) { interval = 1500; maxBurst = 2; }
-        else { interval = 800; maxBurst = 3; }
+        let scale;
+        if (daysLeft > 180) { interval = 9000; maxBurst = 1; scale = 0.8; }
+        else if (daysLeft > 90) { interval = 6000; maxBurst = 1; scale = 0.9; }
+        else if (daysLeft > 30) { interval = 4000; maxBurst = 1; scale = 1; }
+        else if (daysLeft > 14) { interval = 2600; maxBurst = 2; scale = 1.15; }
+        else if (daysLeft > 3) { interval = 1500; maxBurst = 2; scale = 1.3; }
+        else { interval = 800; maxBurst = 3; scale = 1.5; }
 
         const burst = 1 + Math.floor(Math.random() * maxBurst);
-        for (let i = 0; i < burst; i++) spawnPetal();
+        for (let i = 0; i < burst; i++) spawnParticle(scale);
 
         setTimeout(petalLoop, interval + Math.random() * interval * 0.4);
     };
