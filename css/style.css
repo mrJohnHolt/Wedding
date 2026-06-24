@@ -783,6 +783,10 @@ footer p {
         font-size: 6rem;
     }
 
+    .hero-content {
+        margin-top: 13rem;
+    }
+
     header {
         background-position: 65% 25%;
     }
