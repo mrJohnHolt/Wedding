@@ -383,6 +383,10 @@ nav a:hover {
     transform: translateY(-1px);
 }
 
+.nav-desktop {
+    display: none;
+}
+
 /* Sections */
 .section {
     padding: 3rem 0;
@@ -725,6 +729,14 @@ footer p {
     .hero-content .location {
         font-size: 1.3rem;
         margin-bottom: 3rem;
+    }
+
+    .nav-mobile {
+        display: none;
+    }
+
+    .nav-desktop {
+        display: block;
     }
 
     nav ul {
