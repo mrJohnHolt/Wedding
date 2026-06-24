@@ -34,29 +34,25 @@ if (timeCards.length) {
             setUnit('days', '❤');
             setUnit('hours', '❤');
             setUnit('mins', '❤');
-            setUnit('secs', '❤');
             clearInterval(intervalId);
             return;
         }
 
-        const msPerSec = 1000;
-        const msPerMin = msPerSec * 60;
+        const msPerMin = 1000 * 60;
         const msPerHour = msPerMin * 60;
         const msPerDay = msPerHour * 24;
 
         const days = Math.floor(diff / msPerDay);
         const hours = Math.floor((diff % msPerDay) / msPerHour);
         const mins = Math.floor((diff % msPerHour) / msPerMin);
-        const secs = Math.floor((diff % msPerMin) / msPerSec);
 
         setUnit('days', days);
         setUnit('hours', hours);
         setUnit('mins', mins);
-        setUnit('secs', secs);
     };
 
     tick();
-    const intervalId = setInterval(tick, 1000);
+    const intervalId = setInterval(tick, 5000);
 }
 
 // Petal confetti drifting off the countdown — sparse at first, gathering pace as the day nears
