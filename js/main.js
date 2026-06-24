@@ -115,6 +115,35 @@ if (petalField) {
     petalLoop();
 }
 
+// Gifts easter egg — they don't want gifts, so the button dodges the cursor
+const giftCard = document.querySelector('a.detail-card[href^="gifts.html"]');
+const giftBtn = giftCard ? giftCard.querySelector('.btn-secondary') : null;
+
+if (giftCard && giftBtn) {
+    let giftOffset = 0; // 0 = center, -1 = left, 1 = right
+
+    giftBtn.addEventListener('mouseenter', () => {
+        if (giftOffset !== 0) {
+            giftOffset = 0;
+            giftCard.style.transform = 'translateX(0)';
+            return;
+        }
+
+        const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+        let step;
+
+        if (isDesktop && giftCard.parentElement) {
+            const gap = parseFloat(getComputedStyle(giftCard.parentElement).columnGap) || 0;
+            step = giftCard.getBoundingClientRect().width + gap;
+        } else {
+            step = 60;
+        }
+
+        giftOffset = Math.random() < 0.5 ? -1 : 1;
+        giftCard.style.transform = `translateX(${giftOffset * step}px)`;
+    });
+}
+
 // Smooth scrolling for navigation links
 // Only prevent default for internal section links (href starts with #)
 document.querySelectorAll('nav a').forEach(anchor => {
